@@ -12,6 +12,15 @@ function App() {
   return (
     <div className="App">
       <ArticleList articles={articles} />
+      <form>
+        <input
+          type="text"
+          value={newTitle}
+          onChange={(e) => setNewTitle(e.target.value)}
+          placeholder="Inserisci il titolo dell'articolo"
+        />
+        <button type="submit">Aggiungi Articolo</button>
+      </form>
     </div>
   );
 }
