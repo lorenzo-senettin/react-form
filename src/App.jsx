@@ -12,7 +12,14 @@ function App() {
   return (
     <div className="App">
       <ArticleList articles={articles} />
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!newTitle) return;
+          setArticles([...articles, { title: newTitle }]);
+          setNewTitle("");
+        }}
+      >
         <input
           type="text"
           value={newTitle}
